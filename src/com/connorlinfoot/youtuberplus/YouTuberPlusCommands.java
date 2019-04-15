@@ -43,7 +43,7 @@ public class YouTuberPlusCommands implements CommandExecutor {
                     player.sendMessage("/yt whatsnew - Shows whats new in the latest update!");
                 } else if(args[0].equalsIgnoreCase("about")) {
                     player.sendMessage(ChatColor.RED + "=== YouTuber Plus Beta ===");
-                    //player.sendMessage("=== Version: " + getDescription().getDescription() + " ===");
+                    player.sendMessage("=== Version: " + getDescription().getDescription() + " ===");
                     player.sendMessage("=== Version: " + instance.getDescription().getVersion() + " ===");
                 } else if(args[0].equalsIgnoreCase("reload")) {
                     if(player.hasPermission("ytplus.admin.reload")) {
@@ -82,7 +82,7 @@ public class YouTuberPlusCommands implements CommandExecutor {
                     }
                     instance.getConfig().set("recordingPlayers", recordingPlayers);
                     instance.saveConfig();
-                    //player.sendMessage(ChatColor.RED + getConfig().getString("Prefix") + ChatColor.WHITE + " " + recordingPlayers);
+                    player.sendMessage(ChatColor.RED + getConfig().getString("Prefix") + ChatColor.WHITE + " " + recordingPlayers);
                 }
             } else {
                 player.sendMessage(ChatColor.RED + "Access to this command was denied!");
@@ -261,7 +261,7 @@ public class YouTuberPlusCommands implements CommandExecutor {
                     try {
                         ytuser = new Scanner(new URL("http://theminecraftapi.com/youtube/getuser/?uuid=" + player.getUniqueId()).openStream(), "UTF-8").useDelimiter("\\A").next();
                     } catch (IOException e) {
-                        //e.printStackTrace();
+                        e.printStackTrace();
                         ytuser = "";
                     }
                     if (ytuser.equals("NF")) {
@@ -275,7 +275,7 @@ public class YouTuberPlusCommands implements CommandExecutor {
                     try {
                         tuser = new Scanner(new URL("http://theminecraftapi.com/twitch/getuser/?uuid=" + player.getUniqueId()).openStream(), "UTF-8").useDelimiter("\\A").next();
                     } catch (IOException e) {
-                        //e.printStackTrace();
+                        e.printStackTrace();
                         tuser = "";
                     }
                     if (tuser.equals("NF")) {
