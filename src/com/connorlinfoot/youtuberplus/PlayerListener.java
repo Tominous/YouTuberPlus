@@ -20,14 +20,14 @@ import java.util.ArrayList;
  */
 
 public class PlayerListener implements Listener {
-    /*@EventHandler
+    @EventHandler
     public void onNameTag(AsyncPlayerReceiveNameTagEvent event) {
        YouTuberPlus plugin = null;
         plugin = YouTuberPlus;
         if (plugin != null && plugin.recordingPlayers.contains("MoogleMan")) {
             event.setTag(ChatColor.RED + "MoogleMan");
         }
-    }*/
+    }
 
     @EventHandler
     public void onPlayerJoin( PlayerJoinEvent event){
